@@ -1,3 +1,10 @@
-body {
+html {
+    font-size: 16px;
     font-family: 'Montserrat';
+}
+
+
+::selection {
+    color:rgb(0, 255, 0);
+    background-color: black;
 }
