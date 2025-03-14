@@ -1,0 +1,50 @@
+html {
+    font-size: 16px;
+    font-family: $font-primary;
+}
+
+body {
+    background-color: $bg-body;
+    color: $color-text;
+}
+
+section {
+    margin-bottom: $section-margin;
+}
+
+.logo {
+    max-width: 195px;
+}
+
+.container {
+    max-width: 1278px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*!important*/
+.show {
+    display: block !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+/**/
+
+::selection {
+    color:$primary-color;
+    background-color: $bg-footer;
+}
