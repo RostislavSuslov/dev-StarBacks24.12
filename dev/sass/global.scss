@@ -26,15 +26,15 @@ a {
 
 
 .btn-arrow {
-    --size: 84px;
+    --size: 87px;
     --icon-size: 35px;
     --border-radius: 29px;
     --border-width: 3px;
+    padding: 25px;
     width: calc(var(--size) - var(--border-width) * 2);
     height: calc(var(--size) - var(--border-width) * 2);
     border-radius: var(--border-radius);
     background-color: $bg-footer;
-    padding: 25px;
     position: relative;
     @include flex-centered;
 
