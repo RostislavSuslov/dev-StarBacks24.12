@@ -100,6 +100,7 @@ h6,
 
     &.template-title_row-reverse {
         flex-direction: row-reverse;
+        margin-left: auto;
     }
 }
 
@@ -146,7 +147,7 @@ a {
             height: 350px;
         }
     }
- 
+
     &.btn-primary {
         background: $background-gradient;
         font-weight: 600;
@@ -245,21 +246,22 @@ a {
     box-shadow: -4.56px 15.52px 26.48px #143e2875;
     position: relative;
 
-    &::before{
+    &::before {
         content: var(--content);
         background: url(./assets/img/label.png) center/contain no-repeat;
         width: var(--size);
         height: var(--size);
         @include transform-centered;
         @include flex-centered;
+        transform: translate(-50%, -50%) rotate(-15deg);
     }
 
     &.label_text-large {
         font-size: 62px;
     }
-    
+
     &.label_sm {
-        --size: 133px; 
+        --size: 133px;
         font-size: 32px;
     }
 }
