@@ -1,6 +1,7 @@
 @media screen and (max-width: 767px) {
     section {
         margin-bottom: $section-mobile-margin;
+
         &.banner {
             margin-bottom: 50px;
         }
@@ -36,6 +37,22 @@
         }
     }
 
-    
+    .advantages {
+        flex-direction: column;
+        max-width: 260px;
+        padding: 32px 42px;
+        border-radius: 26px;
+        margin: 0 auto $section-mobile-margin;
+    }
 
+    .advantage-img {
+        --size: 86px;
+        img {
+            --size: 128px;
+        }
+    }
+
+    .advantage-title {
+        font-size: 18px;
+    }
 }
