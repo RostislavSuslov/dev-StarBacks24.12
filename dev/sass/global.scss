@@ -10,6 +10,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    &.bg-red {
+        background-color: #5e0000e7!important;
+    }
 }
 
 section {
@@ -122,6 +126,7 @@ a {
 }
 
 .btn {
+    --icon-size: 28px;
     padding: 23px 53px;
     border-radius: 45px;
     display: inline-block;
@@ -208,6 +213,8 @@ a {
 }
 
 .icon-svg {
+    margin-top: -4px;
+    vertical-align: middle;
     height: var(--icon-size);
     width: var(--icon-size);
 }
@@ -266,6 +273,9 @@ a {
     }
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
 
 /*!important*/
 .show {
