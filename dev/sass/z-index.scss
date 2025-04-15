@@ -1,0 +1,36 @@
+.footer:before { z-index: -1; }
+
+.btn {
+
+    &::before {
+        z-index: -1;
+    }
+
+    &.btn-secondary {
+        &::after {
+            z-index: -1;
+        }
+    }
+}
+
+.btn-arrow {
+    &:after {
+        z-index: -1;
+    }
+}
+
+.header {
+    z-index: 1;
+}
+
+.template-content {
+    &__img-box {
+        .label {
+            z-index: 1;
+        }
+    }
+}
+
+.modal {
+    z-index: 2;
+}

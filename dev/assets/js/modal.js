@@ -1,17 +1,60 @@
-const triger = document.querySelector('#triger')
-const modal = document.querySelector('.modal')
-const close = document.querySelector('.btn-close')
 const body = document.querySelector('body')
+const trigers = document.querySelectorAll('[data-modal]')
+const closeTrigers = document.querySelectorAll('[data-close-modal]')
+ 
+function closeModal(element, event) {
+    event.preventDefault()
+    element.closest('.modal').classList.remove('d-flex')
+    body.classList.remove('overflow-hidden')
+}
 
-function showModal() {
+function showModal(modal) {
     modal.classList.add('d-flex')
     body.classList.add('overflow-hidden')
 }
 
-function closeModal() {
-    modal.classList.remove('d-flex')
-    body.classList.remove('overflow-hidden')
-}
+trigers.forEach(
+    function(element) {
+        const modalId = element.getAttribute('data-modal')
+        element.addEventListener('click', function(event) {
+            event.preventDefault()
+            const modal = document.getElementById(modalId)
+            showModal(modal)
+        })
+    }
+)
 
-triger.addEventListener('click', showModal)
-close.addEventListener('click', closeModal)
+closeTrigers.forEach(function(element) {
+    element.addEventListener('click', function(event) {
+        closeModal(element, event)
+    })
+})
+
+/*
+
+EXAMPLE:
+
+Button trigger modal
+<a href="#" data-modal="feedback">feedback</a>
+
+Modal 
+<div id="feedback" class="modal">
+    <a href="#" class="btn-close" data-close-modal></a>
+    <h2>feedback</h2>
+</div> 
+.
+.
+.
+.
+.
+.
+TRIGER
+<a href="#" data-modal="qwerty">qwerty</a>
+
+MODAL WINDOW
+<div id="qwerty" class="modal">
+    <a href="#" class="btn-close" data-close-modal></a>
+    <h2>qwerty</h2>
+</div> 
+
+*/
