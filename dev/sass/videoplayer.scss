@@ -4,6 +4,13 @@
     border-radius: 42px;
     padding: var(--size);
     background: linear-gradient(230deg, #fff 3.94%, #e5e5e5 64.08%, #fbfbfb 88.62%);
+    overflow: auto;
+    scrollbar-width: none; /*scroll hiden for -moz*/
+
+    &::-webkit-scrollbar { /*scroll hiden for opera, chrome, safary*/
+        width: 0px;
+        background: rgba(255, 255, 255, 0.0);
+    }
 
     video {
         width: 100%;
@@ -35,6 +42,7 @@
 
 .btn-volume {
     @extend .btn-arrow;
+    margin-left: auto;
 
     &.active {
         .volume-off {
@@ -45,6 +53,7 @@
 
 .video-description {
     color: $bg-body-secondary;
+
     h4 {
         color: #000;
     }
@@ -54,6 +63,7 @@
 .show-hide {
     margin-top: 24px;
     font-weight: 600;
+
     &.show {
         color: red;
     }
@@ -66,5 +76,6 @@
 }
 
 .video-description__content.show {
-    height: auto;
+    height: 200px;
+    overflow: auto;
 }

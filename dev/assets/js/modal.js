@@ -1,11 +1,15 @@
 const body = document.querySelector('body')
 const trigers = document.querySelectorAll('[data-modal]')
 const closeTrigers = document.querySelectorAll('[data-close-modal]')
- 
-function closeModal(element, event) {
+
+function closeModal(event) {
     event.preventDefault()
-    element.closest('.modal').classList.remove('d-flex')
-    body.classList.remove('overflow-hidden')
+    console.log(event.target);
+
+    if (event.target.hasAttribute('data-close-modal')) {
+        event.target.closest('.modal').classList.remove('d-flex')
+        body.classList.remove('overflow-hidden')
+    } 
 }
 
 function showModal(modal) {
@@ -26,7 +30,7 @@ trigers.forEach(
 
 closeTrigers.forEach(function(element) {
     element.addEventListener('click', function(event) {
-        closeModal(element, event)
+        closeModal(event)
     })
 })
 
