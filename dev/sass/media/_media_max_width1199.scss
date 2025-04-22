@@ -1,19 +1,19 @@
-@media screen and (max-width: 1199px) {
+ @media screen and (max-width: 1199px) {
     .template-title {
         max-width: 570px;
         margin-bottom: 48px;
-    
+
         h1,
         h2 {
             font-size: 64px;
             margin-bottom: 48px;
         }
-    
+
         &.template-title_row,
         &.template-title_row-reverse {
             max-width: 767px;
             gap: 56px;
-    
+
             h1,
             h2,
             h6 {
@@ -21,14 +21,15 @@
                 margin-bottom: 0;
             }
         }
-    
+
         &.template-title_row-reverse {
             flex-direction: row-reverse;
         }
     }
-    
+
     .advantages {
         gap: 24px;
+
         .label {
             top: -12px;
             left: -12px;
