@@ -12,7 +12,7 @@ const label = document.querySelectorAll('.label')
 const btn = document.querySelectorAll('.btn')
 
 
-const swiper = new Swiper('.swiper-product', {
+const swiperProduct = new Swiper('.swiper-product', {
     slidesPerView: 4,
     loop: true,
     speed: 500,
@@ -45,3 +45,22 @@ const swiper = new Swiper('.swiper-product', {
         }
     }
 });
+
+const swiperEvents = new Swiper('.swiper-events', {
+    loop: true,
+
+    navigation: {
+        nextEl: '.swiper-events-button-next',
+        prevEl: '.swiper-events-button-prev',
+    },
+})
+
+function checkMediaQuery() {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
+       console.log("> 1025px");
+       swiperEvents.destroy();
+    }  
+}
+  
+checkMediaQuery()
+window.addEventListener('resize', checkMediaQuery);
