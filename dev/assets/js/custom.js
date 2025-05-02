@@ -45,22 +45,24 @@ const swiperProduct = new Swiper('.swiper-product', {
         }
     }
 });
-
-const swiperEvents = new Swiper('.swiper-events', {
-    loop: true,
-
-    navigation: {
-        nextEl: '.swiper-events-button-next',
-        prevEl: '.swiper-events-button-prev',
-    },
-})
+ 
+let swiperEvents;
 
 function checkMediaQuery() {
     if (window.matchMedia("(min-width: 1025px)").matches) {
-       console.log("> 1025px");
-       swiperEvents.destroy();
-    }  
+        swiperEvents?.destroy();
+        swiperEvents = null;
+    } else if (!swiperEvents) {
+        swiperEvents = new Swiper('.swiper-events', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-events-button-next',
+                prevEl: '.swiper-events-button-prev',
+            },
+        });
+    }
 }
-  
-checkMediaQuery()
+
+checkMediaQuery();
 window.addEventListener('resize', checkMediaQuery);
+window.addEventListener('orientationchange', () => setTimeout(checkMediaQuery, 300));
